@@ -13,6 +13,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage'
 import HiddenLogin from './pages/HiddenLogin/HiddenLogin'
 import ProtectedRoute from './components/ProtectedRoute'
 import AdminNewPost from './pages/AdminNewPost/AdminNewPost'
+import AdminDashBoard from './pages/AdminDashBoard/AdminDashBoard'
 
 const router = createBrowserRouter([
 
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
         path: "admin",
         element: <ProtectedRoute />,
         children: [
-          // { index: true, element: <AdminDashboard /> },
+          { index: true, element: <AdminDashBoard /> },
           { path: "new", element: <AdminNewPost /> },
         ],
       },
