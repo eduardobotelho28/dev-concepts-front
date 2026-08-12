@@ -2,21 +2,25 @@
 import { useEffect, useState, useCallback } from "react";
 import { apiFetch } from "../../utils/apiClient";
 import "./AdminDashBoard.css";
+import { replace, useNavigate } from "react-router-dom";
 
 const STORAGE_URL = import.meta.env.VITE_STORAGE_URL;
-const API_URL     = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function AdminDashBoard() {
-  const [concepts, setConcepts]       = useState([]);
-  const [loading, setLoading]         = useState(true);
-  const [error, setError]             = useState("");
+
+  const navigate = useNavigate();
+
+  const [concepts, setConcepts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const [searchInput, setSearchInput] = useState("");
-  const [search, setSearch]           = useState("");
-  const [page, setPage]               = useState(1);
-  const [meta, setMeta]               = useState({ current_page: 1, last_page: 1 });
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [meta, setMeta] = useState({ current_page: 1, last_page: 1 });
 
-  const [deletingId, setDeletingId]    = useState(null);
+  const [deletingId, setDeletingId] = useState(null);
 
   const loadConcepts = useCallback(async () => {
     setLoading(true);
@@ -71,17 +75,37 @@ export default function AdminDashBoard() {
 
     <div className="admin-dashboard">
       <div className="dashboard-header">
+
         <h1>Conceitos</h1>
 
-        <form onSubmit={handleSearchSubmit} className="search-form">
-          <input
-            type="text"
-            placeholder="Buscar por título..."
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-          />
-          <button type="submit">Buscar</button>
-        </form>
+        <div className="search-container">
+
+          <form onSubmit={handleSearchSubmit} className="search-form">
+            <input
+              type="text"
+              placeholder="Buscar por título..."
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+            <button type="submit">Buscar</button>
+          </form>
+
+          <button
+            onClick={() => {
+              setPage(1)
+              setSearchInput("")
+              setSearch("")
+            }}
+            className="clean-button"
+          >
+            Limpar
+          </button>
+          
+        </div>
+
+        <button className="new-concept-button" onClick={() => navigate("/admin/new", { replace: true })}>Novo Conceito +
+
+        </button>
 
       </div>
 

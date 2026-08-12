@@ -5,6 +5,11 @@
   padding: 2rem;
 }
 
+.search-container {
+  display: flex;
+  gap:10px;
+}
+
 .dashboard-header {
   display: flex;
   align-items: center;
@@ -29,6 +34,24 @@
 .search-form button {
   padding: 0.5rem 1rem;
   background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clean-button {
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.new-concept-button {
+  padding: 0.5rem 1rem;
+  background: #386150;
   color: #fff;
   border: none;
   border-radius: 6px;

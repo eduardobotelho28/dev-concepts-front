@@ -18,6 +18,9 @@ const TAGS = [
     { id: 11, name: "System Design" },
     { id: 12, name: "Banco de Dados" },
     { id: 13, name: "UX/UI" },
+    { id: 14, name: "Deploy" },
+    { id: 15, name: "Protocolos" },
+    { id: 16, name: "Nuvem" },
 ];
 
 const emptyLink = { title: "", url: "", type: "" };
