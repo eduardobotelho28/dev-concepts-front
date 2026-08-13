@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import Home from './pages/Home/Home'
 import RootLayout from './layouts/RootLayout'
-import ConceptList from './pages/ConceptList'
+import ConceptsList from './pages/ConceptList/ConceptList'
 import ConceptDetail from './pages/ConceptDetail'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import HiddenLogin from './pages/HiddenLogin/HiddenLogin'
@@ -25,17 +25,10 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
 
-      // {
-      //   path: "concepts",
-      //   element: <ConceptsList />,
-      //   // loader roda antes de renderizar; recebe a URL com os query params
-      //   loader: async ({ request }) => {
-      //     const url = new URL(request.url);
-      //     const tag = url.searchParams.get("tag");
-      //     const q = url.searchParams.get("q");
-      //     return fetchConcepts({ tag, q }); // sua função de API
-      //   },
-      // },
+      {
+        path: "concepts",
+        element: <ConceptsList />,
+      },
 
       // {
       //   path: "concept/:id",
