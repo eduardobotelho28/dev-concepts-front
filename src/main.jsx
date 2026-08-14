@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from './pages/Home/Home'
 import RootLayout from './layouts/RootLayout'
 import ConceptsList from './pages/ConceptList/ConceptList'
-import ConceptDetail from './pages/ConceptDetail'
+import ConceptDetail from './pages/ConceptDetail/ConceptDetail'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import HiddenLogin from './pages/HiddenLogin/HiddenLogin'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -30,11 +30,10 @@ const router = createBrowserRouter([
         element: <ConceptsList />,
       },
 
-      // {
-      //   path: "concept/:id",
-      //   element: <ConceptDetail />,
-      //   loader: async ({ params }) => fetchConceptById(params.id),
-      // },
+      {
+        path: "concept/:slug",
+        element: <ConceptDetail />,
+      },
 
       { path: "admin-portal", element: <HiddenLogin /> },
 
