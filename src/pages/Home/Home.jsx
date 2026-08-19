@@ -55,7 +55,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-glow" />
         <span className="eyebrow eyebrow-light">DEVCONCEPTS</span>
-        <h1>Olá, O que você vai revisar hoje?</h1>
+        <h1>Olá, q que você vai revisar hoje?</h1>
         <p className="hero-subtitle">
           Resumos rápidos, TL;DRs e notas de campo sobre conceitos de
           desenvolvimento, pra revisar antes de uma entrevista, relembrar algo
@@ -89,7 +89,7 @@ export default function Home() {
             </div>
             <div className="overview-item">
               <span className="overview-icon">MD</span>
-              <p>Resumo completo em markdown, direto ao ponto.</p>
+              <p>Resumo completo em markdown, feito com os melhores modelos de IA, direto ao ponto.</p>
             </div>
             <div className="overview-item">
               <span className="overview-icon">↗</span>
